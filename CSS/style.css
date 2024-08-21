@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    scroll-behavior: smooth;
+  }
+  
+  /*All colors used here*/
+:root{
+    --other-color: rgb(195, 255, 0);
+    --text-color: white;
+    --main-color: black;
+  
+    --big-font: 4.4rem;
+
+     /*========== Margenes Bottom ==========*/
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+}
+  
+body{
+    background: var(--main-color);
+    color: var(--text-color);
+}
+  
+  /*Header starts here*/
+  
+header{
+    position: absolute;
+    width: 100%;
+    touch-action: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .5s ease;
+}
+  
+.logo {
+   font-size: 30px;
+   color: var(--text-color);
+}
+  
+.logo span{
+    color: var(--other-color);
+}
+  
+.navlist{
+    display: flex;
+}
+  
+.navlist a{
+    display: inline-block;
+    margin: 0 20px;
+    color: var(--text-color);
+    font-size: var(--p-fonts);
+    transition: all .5s ease;
+}
+  
+.navlist a:hover{
+    color: var(--other-color);
+}
+  
+.right-content{
+    display: flex;
+    align-items: center;
+}
+  
+.nav-btn{
+    display: inline-block;
+    padding: 9px 25px;
+    background: transparent;
+    border: 2px solid var(--other-color);
+    border-radius: 7px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all .5s ease;
+}
+  
+  
+/*Header ends here*/
+
+section{
+    padding: 0 14%;
+}
+
+/*Hero starts here*/
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+    
+}
+
+.hero-text h1{
+    font-size: 3.1rem;
+}
+
+
+.hero-text h1 span{
+    color: var(--other-color);
+    padding: 10px;
+}
+.hero img{
+    width: 90%;
+    height: auto;
+}
+
+.icons{
+    position: absolute;
+    top: 50%;
+    padding: 0 7%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 35px 0;
+    color: var(--text-color);
+    font-size: 20px;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    transform: translateY(-5px);
+    color: var(--other-color);
+}
+
+.btn{
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--other-color);
+    border: none;
+    border-radius: 35px;
+    color: var(--main-color);
+    font-size: 15px;
+    font-weight: bold;
+    transition: all .5s ease;
+    margin-right: 18px;
+    bottom: 10px;
+}
+
+
+
+
+
+/*Responsiveness starts here*/
+
+@media (max-width: 1770px) {
+    header{
+        padding: 22px 4%;
+    }
+    .icons{
+        padding: 0 4%;
+    }
+}
+
+@media (max-width: 1670px){
+    :root{
+        --big-fonts: 5.5rem;
+        --p-fonts: 14px;
+    }
+   
+}
+
+@media (max-width: 1370px){
+    .icons{
+        display: none;
+    }
+    section{
+        padding: 0 4%;
+    }
+}
+
+@media (max-width: 1150px){
+    :root{
+        --big-fonts: 4.3rem;
+    }
+    .btn{
+        padding: 10px 23px;
+    }
+}
+
+@media (max-width: 950px){
+    .navlist{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 50px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(15px);
+        transition: all .5s ease-in;
+        display: none;
+    }
+    
+}
+
+@media (max-width: 920px){
+   .hero{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .hero-text{
+        padding-top: 130px;
+    }
+    .hero-img{
+        height: 500px;
+        width: 500px;
+        margin: 0 auto;
+    }
+    .hero-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 570px){
+    .hero{
+        height: 100vh;
+    }
+    .hero-img{
+        width: 400px;
+        height: 400px;
+       margin: 0 auto;
+    }
+    :root{
+        --big-fonts: 4rem;
+    }
+}
+
+@media (max-width: 440px){
+    :root{
+        --big-fonts: 3.5rem;
+    }
+    .hero-text h5{
+        font-size: 16px;
+    }
+   .hero-img{
+        width: 365px;
+        height: 365px;
+       margin: 0 auto;
+      
+    }
+}
+
+@media (max-width: 410px){
+    :root{
+        --big-fonts: 3.4rem;
+    }
+    .hero-text h1{
+        font-size: 45px;
+    }
+    .hero-img{
+        width: 345px;
+        height: 345px;
+       margin: 0 auto;
+    }
+    .nav-btn{
+        padding: 9px 18px;
+       
+    }
+    .btn{
+        padding: 9px 20px;
+    }
+}
+
+/*Responsiveness starts here*/
+
+
+
+
+
