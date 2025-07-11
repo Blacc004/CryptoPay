@@ -128,6 +128,20 @@
 
     <!--=============== JS ===============-->
     <script src="JS/main.js"></script>
+<script>
+  function revealTimelineItems() {
+    document.querySelectorAll('.timeline-item').forEach(function(item, idx){
+      const rect = item.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100){
+        setTimeout(function(){
+          item.classList.add('visible');
+        }, idx * 200); // Staggered delay based on position
+      }
+    });
+  }
+  window.addEventListener('scroll', revealTimelineItems);
+  document.addEventListener('DOMContentLoaded', revealTimelineItems);
+</script>
 
 </body>
 </html>
